@@ -5,18 +5,16 @@ Code and pretrained models for ACL 2023 main conference short paper: "[Modality 
 ## Enviroment Configuration
 ```bash
 conda create -n tab python=3.6
+conda activate tab
 conda install pytorch==1.8.0 torchaudio==0.8.0 cudatoolkit=11.1 -c pytorch -c conda-forge
 # cudatoolkit=10.2 is also acceptable.
 
-mkdir ~/TAB
-cd ~/TAB
-mkdir data checkpoints
+mkdir ~/TAB && cd ~/TAB && mkdir data checkpoints
 git clone https://github.com/hannlp/tab Fairseq-S2T
 cd Fairseq-S2T
 pip install --upgrade pip
 pip install --editable ./
-pip install pandas sacremoses sentencepiece configargparse gpustat tensorboard editdistance
-pip install sacrebleu==1.4.13
+pip install sacrebleu==1.4.13 pandas sacremoses sentencepiece configargparse gpustat tensorboard editdistance
 ```
 
 ## Examples on MuST-C en-de

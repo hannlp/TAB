@@ -45,7 +45,7 @@ tokenizer=0
 use_raw_audio=0
 
 use_specific_dict=1
-specific_dir=${code_dir}/egs/vocabs/${lang}
+specific_dir=${code_dir}/egs/vocabs/${dataset}
 asr_vocab_prefix=spm_unigram10000_st_share
 st_vocab_prefix=spm_unigram10000_st_share
 
@@ -243,7 +243,6 @@ if [ ${stage} -le 1 ] && [ ${stop_stage} -ge 1 ]; then
     fi
 
     cp ${BASH_SOURCE[0]} ${model_dir}
-    cp ${PWD}/train.sh ${model_dir}
 
     extra_parameter="${extra_parameter}
         --train-config ${pwd_dir}/conf/basis.yaml"
