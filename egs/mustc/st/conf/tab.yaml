@@ -1,0 +1,62 @@
+arch: s2t_tab
+share-decoder-input-output-embed: True
+optimizer: adam
+clip-norm: 10.0
+lr-scheduler: inverse_sqrt
+warmup-init-lr: 1e-7
+warmup-updates: 4000
+lr: 7e-4
+adam_betas: (0.9,0.98)
+
+criterion: label_smoothed_cross_entropy_with_ctc_and_consistency
+label_smoothing: 0.1
+
+encoder-normalize-before: True
+decoder-normalize-before: True
+encoder-embed-norm: True
+encoder-no-scale-embedding: True
+textual-encoder-embed-norm: True
+textual-encoder-no-scale-embedding: True
+
+subsampling-type: conv1d
+subsampling-layers: 2
+subsampling-filter: 2048
+subsampling-kernel: 5
+subsampling-stride: 2
+subsampling-norm: none
+subsampling-activation: glu
+
+dropout: 0.15
+activation-fn: relu
+encoder-embed-dim: 512
+encoder-ffn-embed-dim: 2048
+encoder-layers: 12
+text-encoder-layers: 6
+decoder-layers: 6
+encoder-attention-heads: 8
+
+decoder-embed-dim: 512
+decoder-ffn-embed-dim: 2048
+decoder-attention-heads: 8
+
+ctc-weight: 0.3
+use-auxiliary-branch: True
+auxiliary-branch-loss-weight: 1.0
+consistency-type: bi-KL
+consistency-weight: 5.0
+
+#replacement-probability-strategy: fix
+#replacement-probability: 0.0
+replacement-probability-strategy: dynamic
+uncertainty-gamma: 0.5
+
+acoustic-encoder: transformer
+macaron-style: True
+use-cnn-module: True
+cnn-module-kernel: 31
+encoder-attention-type: rel_pos
+encoder-activation-fn: swish
+
+load-pretrained-acoustic-encoder-from: /home/hanyuchen/TAB/checkpoints/mustc_en_de_asr.pt
+load-pretrained-text-encoder-from: /home/hanyuchen/TAB/checkpoints/mustc_en_de_mt.pt
+load-pretrained-decoder-from: /home/hanyuchen/TAB/checkpoints/mustc_en_de_mt.pt

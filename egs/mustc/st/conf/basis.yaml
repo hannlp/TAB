@@ -1,0 +1,27 @@
+train-subset: train
+valid-subset: dev
+
+max-epoch: 100
+max-update: 100000
+patience: 20
+
+eval-bleu: True
+eval-bleu-args: { "beam": 5, "lenpen": 1.0 }
+eval-bleu-detok: moses
+eval-bleu-remove-bpe: sentencepiece
+eval-bleu-print-samples: True
+best_checkpoint_metric: bleu
+maximize_best_checkpoint_metric: True
+
+#best_checkpoint_metric: loss
+#maximize_best_checkpoint_metric: False
+post-process: sentencepiece
+no-epoch-checkpoints: True
+keep-best-checkpoints: 10
+
+num-workers: 8
+no-progress-bar: True
+log-interval: 100
+seed: 1
+report-accuracy: True
+skip-invalid-size-inputs-valid-test: True
