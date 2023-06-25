@@ -48,7 +48,7 @@ The trained models will be saved at `~/TAB/checkpoints/mustc.en-de/st/{DATE}_tab
 
 ### Evaluate
 ```bash
-bash run.sh --stage 2 --stop_stage 2 --tgt_lang de --exp_name {DATE}_tab_{EXP_TAG}
+bash run.sh --stage 2 --stop_stage 2 --tgt_lang de --exp_name {DATE}_tab_{EXP_TAG} --gpu_num 1 --test_subset dev,tst-COMMON
 ```
 
 ## Contact and Citation
