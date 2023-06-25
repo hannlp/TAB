@@ -2,7 +2,7 @@
 Code and pretrained models for ACL 2023 main conference short paper: "[Modality Adaption or Regularization? A Case Study on End-to-End Speech Translation](https://arxiv.org/abs/2306.07650)".
 ![method](/egs/figs/method.png)
 
-## Enviroment Configuration
+## Environment Configuration
 ```bash
 conda create -n tab python=3.6
 conda activate tab
