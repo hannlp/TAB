@@ -40,7 +40,7 @@ dev.en             fbank80.zip  spm_unigram10000_st_share.txt    train.tsv      
 ### Tuning with auxiliary branch
 1. Download [the pre-trained ASR and MT models](https://drive.google.com/drive/folders/1e1w9UpQQ2DkQ1mMKIdgQrvLNzqQ2Yq2G?usp=sharing) and modify the parameters in `conf/tab.yaml` such as `load-pretrained-xxx-from` to match the corresponding models. 
 2. Some other parameters in the paper can be adjusted, including: `use-auxiliary-branch,consistency-type,consistency-weight,replacement-probability-strategy,replacement-probability,uncertainty-gamma`.
-3. Run the following command to start training (Note that `gpu_num * max_tokens * update_freq` should be 32k. And `exp_tag` can be set to mark and distinguish different experiments).
+3. Run the following command to start training (Note that `gpu_num * max_tokens * update_freq` should be 320k. And `exp_tag` can be set to mark and distinguish different experiments).
 ```bash
 bash run.sh --stage 1 --stop_stage 1 --tgt_lang de --train_config tab --exp_tag uncertainty_gamma0.5_alpha5 --gpu_num 4 --max_tokens 20000 --update_freq 4
 ```
