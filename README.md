@@ -54,21 +54,18 @@ bash run.sh --stage 2 --stop_stage 2 --tgt_lang de --exp_name {DATE}_tab_{EXP_TA
 ## Contact and Citation
 To keep things simple, we have not included the scripts for the pre-training stage. If you have any questions, please do not hesitate to contact me at `hanyuchen114@gmail.com`. If you find this repository helpful, please cite it as:
 ```bash
-@article{DBLP:journals/corr/abs-2306-07650,
-  author       = {Yuchen Han and
-                  Chen Xu and
-                  Tong Xiao and
-                  Jingbo Zhu},
-  title        = {Modality Adaption or Regularization? {A} Case Study on End-to-End
-                  Speech Translation},
-  journal      = {CoRR},
-  volume       = {abs/2306.07650},
-  year         = {2023},
-  url          = {https://doi.org/10.48550/arXiv.2306.07650},
-  doi          = {10.48550/arXiv.2306.07650},
-  eprinttype    = {arXiv},
-  eprint       = {2306.07650},
-  timestamp    = {Sat, 17 Jun 2023 18:52:05 +0200},
-  biburl       = {https://dblp.org/rec/journals/corr/abs-2306-07650.bib},
-  bibsource    = {dblp computer science bibliography, https://dblp.org}
+@inproceedings{han-etal-2023-modality,
+    title = "Modality Adaption or Regularization? A Case Study on End-to-End Speech Translation",
+    author = "Han, Yuchen  and
+      Xu, Chen  and
+      Xiao, Tong  and
+      Zhu, Jingbo",
+    booktitle = "Proceedings of the 61st Annual Meeting of the Association for Computational Linguistics (Volume 2: Short Papers)",
+    month = jul,
+    year = "2023",
+    address = "Toronto, Canada",
+    publisher = "Association for Computational Linguistics",
+    url = "https://aclanthology.org/2023.acl-short.115",
+    pages = "1340--1348",
+    abstract = "Pre-training and fine-tuning is a paradigm for alleviating the data scarcity problem in end-to-end speech translation (E2E ST). The commonplace {''}modality gap{''} between speech and text data often leads to inconsistent inputs between pre-training and fine-tuning. However, we observe that this gap occurs in the early stages of fine-tuning, but does not have a major impact on the final performance. On the other hand, we find that there has another gap, which we call the {''}capacity gap{''}: high resource tasks (such as ASR and MT) always require a large model to fit, when the model is reused for a low resource task (E2E ST), it will get a sub-optimal performance due to the over-fitting. In a case study, we find that the regularization plays a more important role than the well-designed modality adaption method, which achieves 29.0 for en-de and 40.3 for en-fr on the MuST-C dataset.",
 }
